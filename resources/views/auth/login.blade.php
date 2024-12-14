@@ -26,7 +26,7 @@
 
             <div class="mb-3">
               <label for="specificSizeInputName" class="form-label">Username</label>
-              <input type="text" class="form-control" id="specificSizeInputName" placeholder="User Name" required>
+              <input type="text" class="form-control" id="specificSizeInputName" placeholder="Username" required>
             </div>
             
             <div class="mb-3">
