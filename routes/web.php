@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::view("/",'Home');
+//Route::view("/",'Home');
+
+Route::get("/", [TestController::class, 'index']);
+
+Route::view("/login",'auth/login');
+Route::view("/register",'auth/register');
