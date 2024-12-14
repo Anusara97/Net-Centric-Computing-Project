@@ -16,10 +16,11 @@
     <div class="abc">
         <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
             <div class="mb-3 d-flex align-items-center">
-                <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="50" height="60" class="me-3">
+                <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
                 <div>
                     <label for="specificSizeInputName" class="form-label mb-0 fw-bold">University of Ruhuna</label><br>
-                    <span class="text-muted">Past Paper Management System</span>
+                    <span class="text-muted">Past Paper Management System</span><br>
+                    <span class="text-muted">Faculty of Science</span>
                 </div>
             </div>
             
