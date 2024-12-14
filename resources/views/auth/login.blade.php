@@ -13,21 +13,25 @@
 </style>
 
 <body style="background-color: #f8f9fa">
-    <h1>Enter your login details</h1>
     <div class="abc">
         <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
-            <div class="mb-3">
-                <input type="text" class="form-control" id="specificSizeInputName" placeholder="User Name">
-              </div>
+            <div class="mb-3 d-flex align-items-center">
+                <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="50" height="60" class="me-3">
+                <div>
+                    <label for="specificSizeInputName" class="form-label mb-0 fw-bold">University of Ruhuna</label><br>
+                    <span class="text-muted">Past Paper Management System</span>
+                </div>
+            </div>
+            
 
             <div class="mb-3">
               <label for="specificSizeInputName" class="form-label">Username</label>
-              <input type="text" class="form-control" id="specificSizeInputName" placeholder="User Name">
+              <input type="text" class="form-control" id="specificSizeInputName" placeholder="User Name" required>
             </div>
             
             <div class="mb-3">
               <label for="specificSizeInputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password">
+              <input type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password" required>
             </div>
         
             <div class="form-check mb-3">
