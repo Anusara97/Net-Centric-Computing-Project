@@ -40,9 +40,9 @@
               <label class="form-check-label" for="autoSizingCheck2">Remember me</label>
             </div>
         
-            <div class="d-flex justify-content-between">
-              <button type="submit" class="btn btn-primary me-2">Login</button>
-              <button type="reset" class="btn btn-danger">Clear</button>
+            <div class="d-flex justify">
+                <button type="submit" class="btn btn-primary me-2">Login</button>
+                <button type="reset" class="btn btn-danger">Clear</button>
             </div>
           </form>
     </div>

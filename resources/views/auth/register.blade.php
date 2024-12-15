@@ -70,7 +70,14 @@
                 <div class="mb-3 row">
                     <label for="department" class="col-sm-4 col-form-label">Department:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="department" placeholder="Computer Science">
+                        <select name="department" class="form-control" id="department">
+                            <option value="Bot">Botany</option>
+                            <option value="CS" selected>Computer Science</option>
+                            <option value="Chem">Chemistry</option>
+                            <option value="Maths">Mathematics</option>        
+                            <option value="Phy">Physics</option>
+                            <option value="Zoo">Zoology</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -83,6 +90,7 @@
                     </div>
                 </div>
             </div>
+
             <script>
                 // Initial State: Hide fields
                 document.getElementById("academicFields").style.display = "none";
@@ -98,6 +106,7 @@
                     document.getElementById("studentFields").style.display = isStudent ? "block" : "none";
                 }
             </script>
+
             <div class="mb-3 row">
                 <label for="specificSizeInputPassword" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-8">
