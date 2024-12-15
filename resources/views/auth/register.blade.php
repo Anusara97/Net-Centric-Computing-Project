@@ -18,9 +18,9 @@
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
                 <div>
-                    <label for="specificSizeInputName" class="form-label mb-0 fw-bold">University of Ruhuna</label><br>
-                    <span class="text-muted">Past Paper Management System</span><br>
-                    <span class="text-muted">Faculty of Science</span>
+                    <label for="specificSizeInputName" class="form-label mb-0 fw-bold">Past Paper Management System</label><br>
+                    <span class="text-muted">Faculty of Science</span><br>
+                    <span class="text-muted">University of Ruhuna</span>
                 </div>
             </div>
 

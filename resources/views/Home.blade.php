@@ -1,18 +1,42 @@
 @include('cdn')
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">        
-        <div>
-            <img src="{{ asset('images/Ru.jpg') }}" alt="Logo" width="50" height="60" class="d-inline-block align-text-top">
-            <label for="specificSizeInputName" class="form-label mb-0 fw-bold">University of Ruhuna</label>
-            <span class="text-muted">Past Paper Management System</span>
-            <span class="text-muted">Faculty of Science</span>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="{{ asset('images/Ru.jpg') }}" alt="Logo" width="60" height="70" class="me-3">
+            <div class="text-start">
+                <p class="mb-0 fw-bold text-black" style="font-size: 1.5rem;">Past Paper Management System</p>
+                <p class="mb-0 text-muted" style="font-size: 0.9rem;">Faculty of Science</p>
+                <p class="mb-0 text-muted" style="font-size: 0.9rem;">University of Ruhuna</p>
+            </div>
+        </a>
+
+        <div class="d-flex align-items-center">
+            <a class="btn custom-btn me-2" href="{{ url('/register') }}">Sign up</a>
+            <a class="btn custom-btn" href="{{ url('/login') }}">Sign in</a>
         </div>
-      </a>
     </div>
 </nav>
 
+
 <style>
+    .custom-btn {
+        background-color: #87CEEB; /* Sky blue background */
+        color: #003366; /* Darker text content */
+        padding: 10px 20px; /* Add padding for a better button shape */
+        font-weight: bold; /* Bold text for emphasis */
+        text-align: center;
+        border-radius: 5px; /* Smooth corners */
+    }
+
+    .custom-btn:hover {
+        background-color: #62B2DB; /* Slightly darker shade on hover */
+        color: white; /* White text on hover for contrast */
+    }
+
+    .me-2 {
+        margin-right: 10px; /* Space between buttons */
+    }
+
     /* Adjust carousel height */
     #carouselExampleCaptions .carousel-inner img {
         height: 50vh; /* Set height to 1/4 of the viewport height */
