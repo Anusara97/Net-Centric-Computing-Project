@@ -37,9 +37,8 @@
         margin-right: 10px; /* Space between buttons */
     }
 
-    /* Adjust carousel height */
     #carouselExampleCaptions .carousel-inner img {
-        height: 50vh; /* Set height to 1/4 of the viewport height */
+        height: 50vh; 
         object-fit: cover; /* Ensure the image fills the area without distortion */
     }
 
@@ -48,35 +47,62 @@
     }
 </style>
 
-<div id="carouselExampleCaptions" class="carousel slide">
-    
+{{-- <div id="carouselExampleCaptions" class="carousel slide carousel-fade"> --}}
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
     </div>
     
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('images/Phy.jpg') }}" class="d-block w-100" alt="Computer Science">
+            <img src="{{ asset('images/CS.jpg') }}" class="d-block w-100" alt="Computer Science">
             <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Department of Computer Science</h5>
+                <p>The Department of Computer Science of the University of Ruhuna is the oldest and one of the most esteemed computer science departments in the university system of Sri Lanka.</p>
             </div>
         </div>
 
         <div class="carousel-item">
-            <img src="{{ asset('images/Zoo.jpg') }}" class="d-block w-100" alt="Mathematics">
+            <img src="{{ asset('images/Chem.jpg') }}" class="d-block w-100" alt="Chemistry">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Department of Chemistry</h5>
+                <p>The vision of the Department is to produce graduates with a sound knowledge in Chemistry having international recognition and the ability to fulfill chemistry based current needs of the country.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('images/Chem.jpg') }}" class="d-block w-100" alt="Chemistry">
+            <img src="{{ asset('images/Bot.jpg') }}" class="d-block w-100" alt="Botany">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Department of Botany</h5>
+                <p>The Department of Botany conducts courses in all major fields of Botany for undergraduate students registered for B.Sc. General Degree and B.Sc. Special Degree programmes</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ asset('images/Mat.jpg') }}" class="d-block w-100" alt="Mathematics">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Department of Mathematics</h5>
+                <p>The Department of Mathematics is one of the most prestigious Mathematics departments in the country and is also one of the oldest among the six departments of the Faculty of Science, University of Ruhuna.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ asset('images/Phy.jpg') }}" class="d-block w-100" alt="Physics">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Department of Physics</h5>
+                <p>The Department of Physics conducts course in all majorfields of Physics for undergraduate students registered for B.Sc.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="{{ asset('images/Zoo.jpg') }}" class="d-block w-100" alt="Zoology">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Department of Zoology</h5>
+                <p>The Department of Zoology conducts courses covering basic and applied fields of Zoology for undergraduate students registered for B.Sc. General Degree and B.Sc. Special Degree programs.</p>
             </div>
         </div>
     </div>
@@ -89,7 +115,5 @@
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-    </button>
-
-    
+    </button>    
 </div>
