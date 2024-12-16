@@ -17,53 +17,70 @@
     </div>
 </nav>
 
-
 <style>
     .custom-btn {
-        background-color: #87CEEB; /* Sky blue background */
-        color: #003366; /* Darker text content */
-        padding: 10px 20px; /* Add padding for a better button shape */
-        font-weight: bold; /* Bold text for emphasis */
+        background-color: #87CEEB;
+        color: #003366;
+        padding: 10px 20px;
+        font-weight: bold;
         text-align: center;
-        border-radius: 5px; /* Smooth corners */
+        border-radius: 5px;
     }
 
     .custom-btn:hover {
-        background-color: #62B2DB; /* Slightly darker shade on hover */
-        color: white; /* White text on hover for contrast */
-    }
-
-    .me-2 {
-        margin-right: 10px; /* Space between buttons */
+        background-color: #62B2DB;
+        color: white;
     }
 
     #carouselExampleCaptions .carousel-inner img {
-        height: 50vh; 
-        object-fit: cover; /* Ensure the image fills the area without distortion */
+        height: 50vh; /* Proper height for images */
+        object-fit: cover;
     }
 
     #carouselExampleCaptions {
-        height: 30vh; /* Apply consistent height to the carousel container */
+        margin-bottom: 30px; /* Space below the carousel */
+    }
+
+    /* Body section styling */
+    .page-body {
+        padding: 20px;
+        background-color: #f8f9fa;
+    }
+
+    /* Footer styling */
+    footer {
+        background-color: #2C3E50;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: #ddd;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: white;
     }
 </style>
 
-{{-- <div id="carouselExampleCaptions" class="carousel slide carousel-fade"> --}}
+<!-- Carousel -->
 <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
     </div>
-    
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('images/CS.jpg') }}" class="d-block w-100" alt="Computer Science">
+            <img src="{{ asset('images/CS1.jpg') }}" class="d-block w-100" alt="Computer Science">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Department of Computer Science</h5>
-                <p>The Department of Computer Science of the University of Ruhuna is the oldest and one of the most esteemed computer science departments in the university system of Sri Lanka.</p>
+                <p>The Department of Computer Science at the University of Ruhuna is one of the oldest and most esteemed departments in Sri Lanka.</p>
             </div>
         </div>
 
@@ -71,14 +88,15 @@
             <img src="{{ asset('images/Chem.jpg') }}" class="d-block w-100" alt="Chemistry">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Department of Chemistry</h5>
-                <p>The vision of the Department is to produce graduates with a sound knowledge in Chemistry having international recognition and the ability to fulfill chemistry based current needs of the country.</p>
+                <p>Producing graduates with sound knowledge of Chemistry to fulfill the country's current needs.</p>
             </div>
         </div>
+
         <div class="carousel-item">
             <img src="{{ asset('images/Bot.jpg') }}" class="d-block w-100" alt="Botany">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Department of Botany</h5>
-                <p>The Department of Botany conducts courses in all major fields of Botany for undergraduate students registered for B.Sc. General Degree and B.Sc. Special Degree programmes</p>
+                <p>Conducting courses in major fields of Botany for B.Sc. programs.</p>
             </div>
         </div>
 
@@ -106,14 +124,27 @@
             </div>
         </div>
     </div>
-
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon"></span>
         <span class="visually-hidden">Next</span>
-    </button>    
+    </button>
 </div>
+
+<!-- Page Body -->
+<div class="page-body">
+    <h1 class="text-center">Welcome to the <br> Past Paper Management System</h1>
+    <p class="text-center">
+        This system helps you access and manage <br>past examination papers across departments.
+        Our aim is to make learning efficient and <br>accessible for all students.
+    </p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 University of Ruhuna - Faculty of Science. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
