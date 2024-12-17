@@ -77,7 +77,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('images/CS1.jpg') }}" class="d-block w-100" alt="Computer Science">
+            <img src="{{ asset('images/CS.jpg') }}" class="d-block w-100" alt="Computer Science">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Department of Computer Science</h5>
                 <p>The Department of Computer Science at the University of Ruhuna is one of the oldest and most esteemed departments in Sri Lanka.</p>

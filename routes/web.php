@@ -14,13 +14,14 @@ use App\Http\Controllers\TestController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('Home');
+});
 
 //Route::view("/",'Home');
-
-Route::get("/", [TestController::class, 'index']);
+//Route::get("/", [TestController::class, 'index']);
 
 Route::view("/login",'auth/login');
 Route::view("/register",'auth/register');
+Route::get("/result",[TestController::class, 'getData']);
+

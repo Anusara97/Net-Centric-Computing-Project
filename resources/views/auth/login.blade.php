@@ -14,7 +14,8 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
+        <form action="/result" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
+            @csrf
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
                 <div>
@@ -24,15 +25,32 @@
                 </div>
             </div>
             
-
+            {{-- username --}}
             <div class="mb-3">
               <label for="specificSizeInputName" class="form-label">Username</label>
-              <input type="text" class="form-control" id="specificSizeInputName" placeholder="Username" required>
+              <input name="username" type="text" class="form-control" id="specificSizeInputName" placeholder="Username" value="{{old('username')}}">              
+                <span class="text-danger">
+                  @error('username')
+                    <br>
+                    <div class="alert alert-danger" style="text-align:center;" >
+                      {{$message}}
+                    </div>
+                  @enderror
+                </span>              
             </div>
             
+            {{-- password --}}
             <div class="mb-3">
               <label for="specificSizeInputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password" required>
+              <input name="password" type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password">
+              <span class="text-danger">
+                @error('password')
+                  <br>
+                  <div class="alert alert-danger" style="text-align:center;" >
+                    {{$message}}
+                  </div>
+                @enderror
+              </span>
             </div>
         
             <div class="form-check mb-3">
