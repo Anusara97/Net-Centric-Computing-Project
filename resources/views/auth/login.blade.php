@@ -1,5 +1,7 @@
 @include('cdn')
 
+<x-log-Reg_-Header/>
+
 <style>
     /* Center the form in the middle of the screen */
     .abc {
