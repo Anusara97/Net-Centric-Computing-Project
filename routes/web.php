@@ -26,4 +26,5 @@ Route::view("/register",'auth/register');
 Route::get("/result",[TestController::class, 'getData']);
 
 Route::view("/add",'AddPaper');
+Route::view("/dashboard",'Dashboard');
 
