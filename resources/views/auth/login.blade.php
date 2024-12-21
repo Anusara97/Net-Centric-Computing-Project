@@ -16,7 +16,7 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form action="/result" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
+        <form action="/save" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;" method="POST">
             @csrf
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">

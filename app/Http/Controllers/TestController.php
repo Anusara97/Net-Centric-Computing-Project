@@ -15,4 +15,10 @@ class TestController extends Controller
         ]);
         return $req->input();
     }
+
+    function login(Request $req) {
+        $data = $req->input();
+        $req->session()->put('user', $data['username']);
+        return redirect('dashboard');
+    }
 }
