@@ -25,7 +25,7 @@ Route::view("/login",'auth/login');
 Route::post("/save",[TestController::class, 'login']);
 
 Route::view("/register",'auth/register');
-Route::get("/result",[TestController::class, 'getData']);
+Route::post("/register",[TestController::class, 'register']);
 
 Route::view("/add",'AddPaper');
 Route::view("/dashboard",'Dashboard');

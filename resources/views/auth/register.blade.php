@@ -16,7 +16,7 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
+        <form action="/register" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
             @csrf
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
@@ -55,7 +55,7 @@
                 <div class="col-sm-8 d-flex">
                     {{-- staff --}}
                     <div class="form-check me-3">
-                        <input class="form-check-input" type="radio" name="designation" id="academicStaff" value="AcademicStaff" onchange="toggleFields()">
+                        <input class="form-check-input" type="radio" name="designation" id="academicStaff" value="Academic Staff" onchange="toggleFields()">
                         <label class="form-check-label" for="academicStaff">Academic Staff</label>
                     </div>
                     {{-- student --}}
@@ -78,13 +78,13 @@
                 <div class="mb-3 row">
                     <label for="department" class="col-sm-4 col-form-label">Department:</label>
                     <div class="col-sm-8">
-                        <select name="department" class="form-control" id="department">
-                            <option value="Bot">Botany</option>
-                            <option value="CS" selected>Computer Science</option>
-                            <option value="Chem">Chemistry</option>
-                            <option value="Maths">Mathematics</option>        
-                            <option value="Phy">Physics</option>
-                            <option value="Zoo">Zoology</option>
+                        <select name="department" class="form-control" id="department" placeholder="-Select One-">
+                            <option value="Botany">Botany</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Mathematics">Mathematics</option>        
+                            <option value="Physics">Physics</option>
+                            <option value="Zoology">Zoology</option>
                         </select>
                     </div>
                 </div>

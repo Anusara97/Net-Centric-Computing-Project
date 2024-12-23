@@ -21,4 +21,8 @@ class TestController extends Controller
         $req->session()->put('user', $data['username']);
         return redirect('dashboard');
     }
+
+    function register(Request $req) {
+        return $req->input();
+    }
 }

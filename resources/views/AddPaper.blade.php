@@ -16,7 +16,7 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
+        <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;" enctype="multipart/form-data">
             @csrf
             
             <div class="mb-3">
