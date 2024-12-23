@@ -37,7 +37,7 @@
             <div class="mb-3 row">
                 <label for="specificSizeInputName" class="col-sm-4 col-form-label">Name with initials</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="specificSizeInputName" placeholder="A.B.C.Perera" required>
+                    <input name="name" type="text" class="form-control" id="specificSizeInputName" placeholder="A.B.C.Perera" required>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="mb-3 row">
                 <label for="specificSizeInputEmail" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control" id="specificSizeInputEmail" placeholder="perera@ruh.ac.lk" required>
+                    <input name="email" type="email" class="form-control" id="specificSizeInputEmail" placeholder="perera@ruh.ac.lk" required>
                 </div>
             </div>
             
@@ -55,12 +55,12 @@
                 <div class="col-sm-8 d-flex">
                     {{-- staff --}}
                     <div class="form-check me-3">
-                        <input class="form-check-input" type="radio" name="Designation" id="academicStaff" value="AcademicStaff" onchange="toggleFields()">
+                        <input class="form-check-input" type="radio" name="designation" id="academicStaff" value="AcademicStaff" onchange="toggleFields()">
                         <label class="form-check-label" for="academicStaff">Academic Staff</label>
                     </div>
                     {{-- student --}}
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Designation" id="student" value="Student" onchange="toggleFields()">
+                        <input class="form-check-input" type="radio" name="designation" id="student" value="Student" onchange="toggleFields()">
                         <label class="form-check-label" for="student">Student</label>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="mb-3 row">
                     <label for="staffID" class="col-sm-4 col-form-label">Staff ID:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="staffID" placeholder="RUH/SC/XXX">
+                        <input name="stsffId" type="text" class="form-control" id="staffID" placeholder="RUH/SC/XXX">
                     </div>
                 </div>
             
@@ -95,7 +95,7 @@
                 <div class="mb-3 row">
                     <label for="studentID" class="col-sm-4 col-form-label">Student ID:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="studentID" placeholder="SC/20XX/XXXXX">
+                        <input name="studentId" type="text" class="form-control" id="studentID" placeholder="SC/20XX/XXXXX">
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
             <div class="mb-3 row">
                 <label for="specificSizeInputPassword" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password" required>
+                    <input name="password" type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password" required>
                 </div>
             </div>
             
@@ -128,7 +128,7 @@
             <div class="mb-3 row">
                 <label for="specificSizeInputConfirmPassword" class="col-sm-4 col-form-label">Confirm Password</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" id="specificSizeInputConfirmPassword" placeholder="Confirm Password" required>
+                    <input name="confPassword" type="password" class="form-control" id="specificSizeInputConfirmPassword" placeholder="Confirm Password" required>
                 </div>
             </div>
 
