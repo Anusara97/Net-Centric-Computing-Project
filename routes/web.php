@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\TempUserController;
 
 /*
@@ -27,6 +28,9 @@ Route::post("/save",[TestController::class, 'login']);
 
 Route::view("/register",'auth/register');
 Route::post("/register",[TempUserController::class, 'addTempUser']);
+Route::get('/tempUserList',[TempUserController::class, 'showTempUsers']);
+Route::get('approve/{id}',[TempUserController::class,'registerUser']);
+Route::get('remove/{id}',[TempUserController::class,'Remove']);
 
 Route::view("/add",'AddPaper');
 Route::view("/dashboard",'Dashboard');
@@ -38,6 +42,5 @@ Route::get('logout', function () {
     return redirect('/login');
 });
 
-Route::get('/tempUserList',[TempUserController::class, 'showTempUsers']);
-Route::get('remove/{id}',[TempUserController::class,'Remove']);
-
+Route::get('/userList',[UserController::class, 'showUsers']);
+Route::get('removeUser/{id}',[UserController::class,'Remove']);
