@@ -18,6 +18,19 @@
         <form action="/register" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
             @csrf
 
+            {{-- Registration Confirmation Notification --}}
+                @if(Session::has('success'))
+                    <div class="alert alert-success" style="text-align:center">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
+                @if(Session::has('fail'))
+                    <div class="alert alert-danger" style="text-align:center">
+                        {{Session::get('fail')}}
+                    </div>
+                @endif
+            {{-- end notification --}}
+
             <!-- Placeholder for alert -->
             <div id="formAlertContainer"></div>
 
@@ -74,7 +87,7 @@
                 <div class="mb-3 row">
                     <label for="staffID" class="col-sm-4 col-form-label">Staff ID:</label>
                     <div class="col-sm-8">
-                        <input name="stsffId" type="text" class="form-control" id="staffID" placeholder="RUH/SC/XXX">
+                        <input name="staffId" type="text" class="form-control" id="staffID" placeholder="RUH/SC/XXX">
                     </div>
                 </div>
             

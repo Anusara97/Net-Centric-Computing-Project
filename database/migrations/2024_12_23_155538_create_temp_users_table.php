@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('designation');
-            $table->string('staffId')->unique();
-            $table->string('department');
-            $table->string('studentId');
+            $table->string('staffId')->nullable()->unique();
+            $table->string('department')->nullable();
+            $table->string('studentId')->nullable()->unique();
             $table->string('password');
             $table->timestamps();
         });
