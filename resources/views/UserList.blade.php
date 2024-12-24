@@ -34,6 +34,7 @@
                         <th>Staff ID</th>
                         <th>Department</th>
                         <th>Student ID</th>
+                        <th>Role</th>
                         <th>Operation</th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                             <td>{{$user['staffId']}}</td>
                             <td>{{$user['department']}}</td>
                             <td>{{$user['studentId']}}</td>
+                            <td>{{$user['role']}}</td>
                             <td>
                                 <a href="" class="btn btn-success">Edit</a>
                                 <button class="btn btn-danger" onclick="showRejectAlert('{{url('removeUser/'.$user['id'])}}')">Remove</button>

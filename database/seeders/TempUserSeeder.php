@@ -17,21 +17,21 @@ class TempUserSeeder extends Seeder
     {
         //
         DB::table('temp_users')->insert([
-            'name'=>'Anusara Punchihewa',
-            'email'=>'anusara@gmail.com',
+            'name'=>'Aruna Lorensuhewa',
+            'email'=>'aruna@gmail.com',
             'designation'=>'Academic Staff',
-            'staffId'=>'RUH/SC/001',
+            'staffId'=>'RUH/SC/002',
             'department'=>'Computer Science',
             'studentId'=>NULL,
             'role'=>'Staff',
-            'password'=>Hash::make('anusara123')
+            'password'=>Hash::make('aruna123')
         ]);
 
         DB::table('temp_users')->insert([
             'name'=>'Channa Vidanagamachchi',
             'email'=>'channa@gmail.com',
             'designation'=>'Academic Staff',
-            'staffId'=>'RUH/SC/002',
+            'staffId'=>'RUH/SC/003',
             'department'=>'Mathematics',
             'studentId'=>NULL,
             'role'=>'Staff',
@@ -42,7 +42,7 @@ class TempUserSeeder extends Seeder
             'name'=>'Nipuni Rathnayake',
             'email'=>'nipuni@gmail.com',
             'designation'=>'Academic Staff',
-            'staffId'=>'RUH/SC/003',
+            'staffId'=>'RUH/SC/004',
             'department'=>'Physics',
             'studentId'=>NULL,
             'role'=>'Staff',

@@ -44,3 +44,8 @@ Route::get('logout', function () {
 
 Route::get('/userList',[UserController::class, 'showUsers']);
 Route::get('removeUser/{id}',[UserController::class,'Remove']);
+
+//Dashboards
+Route::view("/dashboardAdmin",'dashboards/adminDashboard');
+Route::view("/dashboardStaff",'dashboards/staffDashboard');
+Route::view("/dashboardStudent",'dashboards/studentDashboard');
