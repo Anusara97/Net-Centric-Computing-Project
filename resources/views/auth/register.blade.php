@@ -3,14 +3,13 @@
 <x-log-Reg_-Header/>
 
 <style>
-    /* Center the form in the middle of the screen */
     .abc {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa;
     }
 </style>
 
@@ -18,6 +17,10 @@
     <div class="abc">
         <form action="/register" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
             @csrf
+
+            <!-- Placeholder for alert -->
+            <div id="formAlertContainer"></div>
+
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
                 <div>
@@ -33,7 +36,7 @@
                 <h2 style="text-align: center">Registration</h2>
             </div>
 
-            {{-- name --}}
+            <!-- Name -->
             <div class="mb-3 row">
                 <label for="specificSizeInputName" class="col-sm-4 col-form-label">Name with initials</label>
                 <div class="col-sm-8">
@@ -41,14 +44,14 @@
                 </div>
             </div>
 
-            {{-- email --}}
+            <!-- Email -->
             <div class="mb-3 row">
                 <label for="specificSizeInputEmail" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
                     <input name="email" type="email" class="form-control" id="specificSizeInputEmail" placeholder="perera@ruh.ac.lk" required>
                 </div>
             </div>
-            
+
             {{-- designation --}}
             <div class="mb-3 row align-items-center">
                 <label for="specificSizeInputName" class="col-sm-4 col-form-label">Designation</label>
@@ -116,15 +119,15 @@
                 }
             </script>
 
-            {{-- password --}}
+            <!-- Password -->
             <div class="mb-3 row">
                 <label for="specificSizeInputPassword" class="col-sm-4 col-form-label">Password</label>
                 <div class="col-sm-8">
                     <input name="password" type="password" class="form-control" id="specificSizeInputPassword" placeholder="Password" required>
                 </div>
             </div>
-            
-            {{-- confirm password --}}
+
+            <!-- Confirm Password -->
             <div class="mb-3 row">
                 <label for="specificSizeInputConfirmPassword" class="col-sm-4 col-form-label">Confirm Password</label>
                 <div class="col-sm-8">
@@ -133,11 +136,37 @@
             </div>
 
             <hr>
-        
+
             <div class="d-flex justify">
-              <button type="submit" class="btn btn-primary me-2">Submit</button>
-              <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
             </div>
-          </form>
+        </form>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const password = document.getElementById('specificSizeInputPassword').value;
+            const confPassword = document.getElementById('specificSizeInputConfirmPassword').value;
+
+            // Get alert container and remove any existing alerts
+            const alertContainer = document.getElementById('formAlertContainer');
+            alertContainer.innerHTML = '';
+
+            if (password !== confPassword) {
+                event.preventDefault(); // Prevent form submission
+
+                // Create a new Bootstrap-styled alert
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-danger';
+                alertDiv.role = 'alert';
+                alertDiv.innerHTML = `
+                    <strong>Error!</strong> Passwords do not match. Please re-enter the same password.
+                `;
+
+                // Add alert to the container
+                alertContainer.appendChild(alertDiv);
+            }
+        });
+    </script>
 </body>
