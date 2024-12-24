@@ -10,7 +10,7 @@
 <body style="background-color: #f8f9fa">
     <div class="container mt-5">
         <h2 class="text-center mb-4">User Registration Requests</h2>
-        <div class="table-responsive mx-auto" style="max-width: 80%; padding: 15px; background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <div class="table-responsive mx-auto" style="max-width: 90%; padding: 15px; background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             
             {{-- Registration Confirmation Notification --}}
             @if(Session::has('success'))
