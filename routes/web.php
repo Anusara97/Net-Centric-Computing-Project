@@ -38,3 +38,6 @@ Route::get('logout', function () {
     return redirect('/login');
 });
 
+Route::get('/tempUserList',[TempUserController::class, 'showTempUsers']);
+Route::get('remove/{id}',[TempUserController::class,'Remove']);
+

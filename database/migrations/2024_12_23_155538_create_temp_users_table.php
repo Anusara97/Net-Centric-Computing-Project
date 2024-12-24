@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('department')->nullable();
             $table->string('studentId')->nullable()->unique();
             $table->string('password');
+            $table->string('role');
             $table->timestamps();
         });
     }
