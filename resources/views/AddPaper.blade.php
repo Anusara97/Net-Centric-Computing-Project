@@ -112,7 +112,7 @@
             <div class="mb-3 row">
                 <label for="paper" class="col-sm-4 col-form-label">Attachment:</label>
                 <div class="col-sm-8">
-                    <input type="file" name="paper" class="form-control" id="">
+                    <input type="file" name="paper" class="form-control" id="" required>
                 </div>
             </div>
 

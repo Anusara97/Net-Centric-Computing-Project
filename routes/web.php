@@ -27,16 +27,21 @@ Route::get('/', function () {
 Route::view("/login",'auth/login');
 Route::post("/save",[TestController::class, 'login']);
 
+//Register operations
 Route::view("/register",'auth/register');
 Route::post("/register",[TempUserController::class, 'addTempUser']);
 Route::get('/tempUserList',[TempUserController::class, 'showTempUsers']);
 Route::get('approve/{id}',[TempUserController::class,'registerUser']);
 Route::get('remove/{id}',[TempUserController::class,'Remove']);
 
+//Paper Operations
 Route::view("/add",'AddPaper');
 Route::post("/add", [PastPaperController::class, 'addPaper']);
+Route::get("/papers",[PastPaperController::class, 'viewPapers']);
+Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper');
+Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper');
 
-Route::view("/dashboard",'Dashboard');
+//Route::view("/dashboard",'Dashboard');
 
 Route::get('logout', function () {
     if (session()->has('user')) {
@@ -45,6 +50,7 @@ Route::get('logout', function () {
     return redirect('/login');
 });
 
+//User Operations
 Route::get('/userList',[UserController::class, 'showUsers']);
 Route::get('removeUser/{id}',[UserController::class,'Remove']);
 

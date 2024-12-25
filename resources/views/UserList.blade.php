@@ -66,7 +66,7 @@
                             showCancelButton: true,
                             confirmButtonColor: '#d33',
                             cancelButtonColor: '#3085d6',
-                            confirmButtonText: 'Yes, Remove the user!'
+                            confirmButtonText: 'Yes, Remove the User!'
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redirect to the URL to delete the user

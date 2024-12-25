@@ -12,7 +12,7 @@ class UserController extends Controller
     // view users
     function showUsers() {
         $data = User::all();
-        return view('userList', ['users'=>$data]);
+        return view('UserList', ['users'=>$data]);
     }
 
     //remove Users
