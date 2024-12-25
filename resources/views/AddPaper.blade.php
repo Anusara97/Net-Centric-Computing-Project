@@ -29,7 +29,7 @@
             <div class="mb-3 row">
                 <label for="courseName" class="col-sm-4 col-form-label">Course Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="specificSizeCourseName" placeholder="" required>
+                    <input name="courseName" type="text" class="form-control" id="specificSizeCourseName" placeholder="" required>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
             <div class="mb-3 row">
                 <label for="specificSizeInputCourseCode" class="col-sm-4 col-form-label">Course Code</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="specificSizeInputCourseCode" placeholder="COM1113" required>
+                    <input name="courseCode" type="text" class="form-control" id="specificSizeInputCourseCode" placeholder="COM1113" required>
                 </div>
             </div>
 
@@ -46,12 +46,12 @@
                 <label for="department" class="col-sm-4 col-form-label">Department:</label>
                 <div class="col-sm-8">
                     <select name="department" class="form-control" id="">
-                        <option value="Bot">Botany</option>
-                        <option value="CS" selected>Computer Science</option>
-                        <option value="Chem">Chemistry</option>
-                        <option value="Maths">Mathematics</option>        
-                        <option value="Phy">Physics</option>
-                        <option value="Zoo">Zoology</option>
+                        <option value="Botany">Botany</option>
+                        <option value="Computer Scienece" selected>Computer Science</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Mathematics">Mathematics</option>        
+                        <option value="Physics">Physics</option>
+                        <option value="Zoology">Zoology</option>
                     </select>
                 </div>
             </div>
@@ -61,17 +61,17 @@
                 <label for="level" class="col-sm-4 col-form-label">Level</label>
                 <div class="col-sm-8">
                     <select name="level" class="form-control" id="">
-                        <option value="" selected>Level 1 BSc. General Degree</option>
-                        <option value="">Level 2 BSc. General Degree</option>
-                        <option value="">Level 3 BSc. General Degree</option>
-                        <option value="">Level 1 BSc. Special Degree</option>
-                        <option value="">Level 2 BSc. Special Degree</option> 
+                        <option value="Level 1 BSc. General Degree" selected>Level 1 BSc. General Degree</option>
+                        <option value="Level 2 BSc. General Degree">Level 2 BSc. General Degree</option>
+                        <option value="Level 3 BSc. General Degree">Level 3 BSc. General Degree</option>
+                        <option value="Level 1 BSc. Special Degree">Level 1 BSc. Special Degree</option>
+                        <option value="Level 2 BSc. Special Degree">Level 2 BSc. Special Degree</option> 
                         <hr>     
-                        <option value="">Level 1 BCS General Degree</option>
-                        <option value="">Level 2 BCS. General Degree</option>
-                        <option value="">Level 3 BCS General Degree</option>
-                        <option value="">Level 1 BCS Special Degree</option>
-                        <option value="">Level 2 BCS Special Degree</option>
+                        <option value="Level 1 BCS General Degree">Level 1 BCS General Degree</option>
+                        <option value="Level 2 BCS General Degree">Level 2 BCS General Degree</option>
+                        <option value="Level 3 BCS General Degree">Level 3 BCS General Degree</option>
+                        <option value="Level 1 BCS Special Degree">Level 1 BCS Special Degree</option>
+                        <option value="Level 2 BCS Special Degree">Level 2 BCS Special Degree</option>
                     </select>
                 </div>
             </div>
@@ -81,8 +81,8 @@
                 <label for="semester" class="col-sm-4 col-form-label">Semester</label>
                 <div class="col-sm-8">
                     <select name="semester" class="form-control" id="">
-                        <option value="" selected>Semester 1</option>
-                        <option value="">Semester 2</option>
+                        <option value="Semester 1" selected>Semester 1</option>
+                        <option value="Semester 2">Semester 2</option>
                     </select>
                 </div>
             </div>
@@ -91,7 +91,15 @@
             <div class="mb-3 row">
                 <label for="academicYear" class="col-sm-4 col-form-label">Academic Year</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="specificSizeAcademicYear" placeholder="2024/25" required>
+                    <input name="year" type="text" class="form-control" id="specificSizeAcademicYear" placeholder="2024/25" required>
+                </div>
+            </div>
+
+            {{-- Remark --}}
+            <div class="mb-3 row">
+                <label for="remark" class="col-sm-4 col-form-label">Remarks</label>
+                <div class="col-sm-8">
+                    <input name="remark" type="text" class="form-control" id="specificSizeAcademicYear">
                 </div>
             </div>
 
