@@ -13,19 +13,17 @@ class TempUserController extends Controller
     //save data of the registration
     function addTempUser(Request $req) {
         $TempUser = new TempUser;
-
         
+        $TempUser->name = $req->name;
+        $TempUser->email = $req->email;
+        $TempUser->designation = $req->designation;
         $TempUser->staffId = $req->staffId ?: null;
-
         // Set department to null if the designation is Student, otherwise use the request input
         $TempUser->department = $req->designation === "Student" ? null : $req->department;
-
         $TempUser->studentId = $req->studentId ?: null;
         $TempUser->password = Hash::make($req->password);
-
         // Set the role
         $TempUser->role = $req->designation === "Student" ? "Student" : "Staff";
-
         $result = $TempUser->save();
 
         if($result) {

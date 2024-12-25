@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TempUserController;
+use App\Http\Controllers\PastPaperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::get('approve/{id}',[TempUserController::class,'registerUser']);
 Route::get('remove/{id}',[TempUserController::class,'Remove']);
 
 Route::view("/add",'AddPaper');
+Route::post("/add", [PastPaperController::class, 'addPaper']);
+
 Route::view("/dashboard",'Dashboard');
 
 Route::get('logout', function () {

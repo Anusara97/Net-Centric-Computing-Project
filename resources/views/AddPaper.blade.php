@@ -16,14 +16,27 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;" enctype="multipart/form-data">
+        <form action="/add" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;" enctype="multipart/form-data">
             @csrf
-            
+                        
             <div class="mb-3">
                 <h2 style="text-align: center">Add Past Paper</h2>
             </div>
 
             <hr>
+
+            {{-- Paper Upload Confirmation Notification --}}
+            @if(Session::has('success'))
+                <div class="alert alert-success" style="text-align:center">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+            @if(Session::has('fail'))
+                <div class="alert alert-danger" style="text-align:center">
+                    {{Session::get('fail')}}
+                </div>
+            @endif
+            {{-- end notification --}}
 
             {{-- Course name --}}
             <div class="mb-3 row">
@@ -95,19 +108,19 @@
                 </div>
             </div>
 
-            {{-- Remark --}}
-            <div class="mb-3 row">
-                <label for="remark" class="col-sm-4 col-form-label">Remarks</label>
-                <div class="col-sm-8">
-                    <input name="remark" type="text" class="form-control" id="specificSizeAcademicYear">
-                </div>
-            </div>
-
             {{-- Attachement --}}
             <div class="mb-3 row">
                 <label for="paper" class="col-sm-4 col-form-label">Attachment:</label>
                 <div class="col-sm-8">
                     <input type="file" name="paper" class="form-control" id="">
+                </div>
+            </div>
+
+            {{-- Remark --}}
+            <div class="mb-3 row">
+                <label for="remark" class="col-sm-4 col-form-label">Remarks</label>
+                <div class="col-sm-8">
+                    <input name="remark" type="text" class="form-control" id="specificSizeAcademicYear">
                 </div>
             </div>
 
