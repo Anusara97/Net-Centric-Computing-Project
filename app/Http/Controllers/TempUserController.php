@@ -12,6 +12,13 @@ class TempUserController extends Controller
 {
     //save data of the registration
     function addTempUser(Request $req) {
+        $req->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:temp_users',
+            'designation'=>'required',
+            'password'=>'required'
+        ]);
+
         $TempUser = new TempUser;
         
         $TempUser->name = $req->name;
@@ -27,7 +34,7 @@ class TempUserController extends Controller
         $result = $TempUser->save();
 
         if($result) {
-            return back()->with('success', 'User Regitration Successfull!');
+            return back()->with('success', 'User Regitration Successfull! Await for the credentials.');
         } else {
             return back()->with('fail', 'Somthing worng!, Please check your inputs.');
         }

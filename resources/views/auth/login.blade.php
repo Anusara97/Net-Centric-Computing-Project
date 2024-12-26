@@ -16,7 +16,7 @@
 
 <body style="background-color: #f8f9fa">
     <div class="abc">
-        <form action="/save" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;" method="POST">
+        <form action="/loginUser" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 400px;">
             @csrf
             <div class="mb-3 d-flex align-items-center">
                 <img src="{{ asset('images/Ru.jpg') }}" alt="University logo" width="60" height="70" class="me-3">
@@ -26,6 +26,19 @@
                     <span class="text-muted">University of Ruhuna</span>
                 </div>
             </div>
+
+            {{-- notification details --}}
+            @if(Session::has('success'))
+                <div class="alert alert-success" style="text-align:center">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+            @if(Session::has('fail'))
+                <div class="alert alert-danger" style="text-align:center">
+                    {{Session::get('fail')}}
+                </div>
+            @endif
+            {{-- end notification --}}
             
             {{-- username --}}
             <div class="mb-3">

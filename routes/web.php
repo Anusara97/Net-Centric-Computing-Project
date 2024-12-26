@@ -24,8 +24,15 @@ Route::get('/', function () {
 //Route::view("/",'Home');
 //Route::get("/", [TestController::class, 'index']);
 
+//User login operations
 Route::view("/login",'auth/login');
-Route::post("/save",[TestController::class, 'login']);
+Route::post("/loginUser",[UserController::class, 'loginUser']);
+//Route::post("/save",[TestController::class, 'login']);
+
+//Access Dashboards
+Route::get('/dashboard',[UserController::class,'dashboards']);
+//User logout
+Route::get('/logout',[UserController::class,'logout']);
 
 //Register operations
 Route::view("/register",'auth/register');
@@ -40,15 +47,6 @@ Route::post("/add", [PastPaperController::class, 'addPaper']);
 Route::get("/papers",[PastPaperController::class, 'viewPapers']);
 Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper');
 Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper');
-
-//Route::view("/dashboard",'Dashboard');
-
-Route::get('logout', function () {
-    if (session()->has('user')) {
-        session()->pull('user');
-    }
-    return redirect('/login');
-});
 
 //User Operations
 Route::get('/userList',[UserController::class, 'showUsers']);

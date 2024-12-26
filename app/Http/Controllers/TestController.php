@@ -17,9 +17,14 @@ class TestController extends Controller
     }
 
     function login(Request $req) {
-        $data = $req->input();
-        $req->session()->put('user', $data['username']);
-        return redirect('dashboard');
+        $req->validate([
+            'username'=>'required',
+            'password'=>'required'
+        ]);
+
+        // $data = $req->input();
+        // $req->session()->put('user', $data['username']);
+        // return redirect('dashboard');
     }
 
     function register(Request $req) {

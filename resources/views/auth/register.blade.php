@@ -17,7 +17,7 @@
     <div class="abc">
         <form action="/register" method="POST" class="p-4 rounded shadow bg-white" style="width: 100%; max-width: 500px;">
             @csrf
-
+            
             {{-- Registration Confirmation Notification --}}
                 @if(Session::has('success'))
                     <div class="alert alert-success" style="text-align:center">
@@ -62,6 +62,14 @@
                 <label for="specificSizeInputEmail" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
                     <input name="email" type="email" class="form-control" id="specificSizeInputEmail" placeholder="perera@ruh.ac.lk" required>
+                    <span class="text-danger">
+                        @error('email')
+                            <br>                          
+                            <div class="alert alert-danger" style="text-align:center;" >
+                                {{$message}}
+                            </div>
+                        @enderror
+                      </span>
                 </div>
             </div>
 

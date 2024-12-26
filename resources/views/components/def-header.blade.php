@@ -27,6 +27,7 @@
 
         <div class="d-flex align-items-center">
             <a class="btn custom-btn" href="{{ url('/') }}">Home</a>
+            <a class="btn custom-btn" href="">Logout</a>
         </div>
     </div>    
 </nav>
