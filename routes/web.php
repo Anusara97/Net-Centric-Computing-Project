@@ -19,44 +19,35 @@ use App\Http\Controllers\PastPaperController;
 
 Route::get('/', function () {
     return view('Home');
-});
-
-//Route::view("/",'Home');
-//Route::get("/", [TestController::class, 'index']);
+})->middleware('alreadyLoggedIn');
 
 //User login operations
-Route::view("/login",'auth/login');
-Route::post("/loginUser",[UserController::class, 'loginUser']);
-//Route::post("/save",[TestController::class, 'login']);
+Route::view("/login",'auth/login')->middleware('alreadyLoggedIn');
+Route::post("/loginUser",[UserController::class, 'loginUser']); //operational link
 
 //Access Dashboards
-Route::get('/dashboard',[UserController::class,'dashboards']);
+Route::get('/dashboard',[UserController::class,'dashboards']); //by deafault can't access outside the system
 //User logout
-Route::get('/logout',[UserController::class,'logout']);
+Route::get('/logout',[UserController::class,'logout']); //operational link
 
 //Register operations
-Route::view("/register",'auth/register');
-Route::post("/register",[TempUserController::class, 'addTempUser']);
-Route::get('/tempUserList',[TempUserController::class, 'showTempUsers']);
-Route::get('approve/{id}',[TempUserController::class,'registerUser']);
-Route::get('remove/{id}',[TempUserController::class,'Remove']);
+Route::view("/register",'auth/register')->middleware('alreadyLoggedIn'); //visible to anyone
+Route::post("/register",[TempUserController::class, 'addTempUser']); //save detaila in a temp table
+Route::get('/tempUserList',[TempUserController::class, 'showTempUsers'])->middleware('adminOnly'); //view temp list. Should be related to admin
+Route::get('approve/{id}',[TempUserController::class,'registerUser']); //operational link
+Route::get('remove/{id}',[TempUserController::class,'Remove']); //operational link
 
 //Paper Operations
-Route::view("/add",'AddPaper');
-Route::post("/add", [PastPaperController::class, 'addPaper']);
-Route::get("/papers",[PastPaperController::class, 'viewPapers']);
-Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper');
-Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper');
+Route::view("/add",'AddPaper'); //should be visible to the admin and staff
+Route::post("/add", [PastPaperController::class, 'addPaper']); //operational link
+Route::get("/papers",[PastPaperController::class, 'viewPapers']); // visible to all users
+Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper'); // visible to admin
+Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper'); // visible to all users
 
 //User Operations
-Route::get('/userList',[UserController::class, 'showUsers']);
-Route::get('removeUser/{id}',[UserController::class,'Remove']);
+Route::get('/userList',[UserController::class, 'showUsers'])->middleware('adminOnly'); //visible to admin
+Route::get('removeUser/{id}',[UserController::class,'Remove']); //visible to admin
 // editable purposes
-Route::view('editUser','editUser');
-Route::get('editUser/{id}',[UserController::class,'editUser']);
-Route::post('/updateUser',[UserController::class,'updateUser']);
-
-//Dashboards
-Route::view("/dashboardAdmin",'dashboards/adminDashboard');
-Route::view("/dashboardStaff",'dashboards/staffDashboard');
-Route::view("/dashboardStudent",'dashboards/studentDashboard');
+//Route::view('editUser','editUser'); //visible to admin
+Route::get('editUser/{id}',[UserController::class,'editUser']); //visible to admin
+Route::post('/updateUser',[UserController::class,'updateUser']); //visible to admin
