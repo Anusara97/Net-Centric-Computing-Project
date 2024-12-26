@@ -164,7 +164,7 @@
             <div class="d-flex justify">
                 <button type="submit" class="btn btn-success me-2">Edit & Save</button>
                 {{-- <button type="reset" class="btn btn-danger">Reset</button> --}}
-                <a class="btn btn-warning me-2" href="{{ url('/userList') }}">Cancel</a>
+                <a class="btn btn-warning me-2" href="{{ url()->previous() }}">Cancel</a>
             </div>
         </form>
     </div>
