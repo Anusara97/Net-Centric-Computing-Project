@@ -53,6 +53,10 @@ Route::get('logout', function () {
 //User Operations
 Route::get('/userList',[UserController::class, 'showUsers']);
 Route::get('removeUser/{id}',[UserController::class,'Remove']);
+// editable purposes
+Route::view('editUser','editUser');
+Route::get('editUser/{id}',[UserController::class,'editUser']);
+Route::post('/updateUser',[UserController::class,'updateUser']);
 
 //Dashboards
 Route::view("/dashboardAdmin",'dashboards/adminDashboard');

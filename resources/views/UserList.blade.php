@@ -12,7 +12,7 @@
         <h2 class="text-center mb-4">User Informations</h2>
         <div class="table-responsive mx-auto" style="max-width: 90%; padding: 15px; background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             
-            {{-- Registration Confirmation Notification --}}
+            {{-- Confirmation Notification --}}
             @if(Session::has('success'))
                 <div class="alert alert-success" style="text-align:center">
                     {{Session::get('success')}}
@@ -50,7 +50,7 @@
                             <td>{{$user['studentId']}}</td>
                             <td>{{$user['role']}}</td>
                             <td>
-                                <a href="" class="btn btn-success">Edit</a>
+                                <a href="{{url('editUser/'.$user['id'])}}" class="btn btn-success">Edit</a>
                                 <button class="btn btn-danger" onclick="showRejectAlert('{{url('removeUser/'.$user['id'])}}')">Remove</button>
                             </td>
                         </tr>
