@@ -51,3 +51,5 @@ Route::get('removeUser/{id}',[UserController::class,'Remove']); //visible to adm
 //Route::view('editUser','editUser'); //visible to admin
 Route::get('editUser/{id}',[UserController::class,'editUser']); //visible to admin
 Route::post('/updateUser',[UserController::class,'updateUser']); //visible to admin
+
+Route::view('/testView', 'test');

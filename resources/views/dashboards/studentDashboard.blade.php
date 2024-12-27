@@ -44,4 +44,72 @@
 </nav>
 <hr>
 
-<h1>Welcome Student Dashboard</h1>
+<style>
+    .abc {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #333;
+    }
+
+    .button-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .btn-custom-1 {
+        display: flex;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+        text-align: center; /* Ensures text lines are aligned at the center */
+        height: 2.67in; /* Button height */
+        width: 4in; /* Added fixed width for single button */
+        padding: 1rem; /* Adds padding for better appearance */
+        border-radius: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        line-height: 1.2; /* Adjusts spacing between lines of text */
+        background: linear-gradient(135deg, #56ab2f, #a8e063); /* Bright Green */
+    }
+
+    .btn-custom-1:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-custom-1:active {
+        transform: scale(0.98);
+    }
+</style>
+
+<div class="abc">
+    <!-- Heading Section -->
+    <h1 class="section-heading">Student Dashboard</h1>
+
+    <!-- Button Section -->
+    <div class="button-grid">
+        <a href="/function3" class="btn-custom-1">Past Papers</a>
+    </div>
+</div>
+
+<x-Footer/>
