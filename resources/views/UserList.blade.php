@@ -5,7 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {{-- end scripts --}}
 
-<x-log-Reg_-Header/>
+<x-def-Header/>
 
 <body style="background-color: #f8f9fa">
     <div class="container mt-5">

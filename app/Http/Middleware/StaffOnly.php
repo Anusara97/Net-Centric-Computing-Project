@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\User; // Import the User model
 use Session;
 
-class AdminOnly
+class StaffOnly
 {
     /**
      * Handle an incoming request.
@@ -17,12 +17,12 @@ class AdminOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Session()->has('loginId') && (url('/userList') == $request->url() || url('/tempUserList') == $request->url())) {
+        if (Session()->has('loginId') && (url('/add') == $request->url())) {
            
             $user = User::where('id', Session()->get('loginId'))->first();
 
             // Check if the user role is Staff or Student
-            if ($user && (($user->role === 'Staff') || ($user->role === 'Student'))) {
+            if ($user &&  ($user->role === 'Student')) {
                 return back(); // Redirect back to the previous page
             }
         }

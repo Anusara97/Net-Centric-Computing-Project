@@ -108,7 +108,7 @@
 
     <!-- Button Section -->
     <div class="button-grid">
-        <a href="/function3" class="btn-custom-1">Past Papers</a>
+        <a href="/papers" class="btn-custom-1">Past Papers</a>
     </div>
 </div>
 

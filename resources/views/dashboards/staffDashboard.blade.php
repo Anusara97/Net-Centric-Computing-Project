@@ -129,8 +129,8 @@
     <h1 class="section-heading">Staff Dashboard</h1>
     
     <div class="button-grid">
-        <a href="/function1" class="btn-custom-1">Add Paper</a>
-        <a href="/function2" class="btn-custom-1">View Papers</a>        
+        <a href="/add" class="btn-custom-1">Add Paper</a>
+        <a href="/papers" class="btn-custom-1">View Papers</a>        
     </div>
 </div>
 

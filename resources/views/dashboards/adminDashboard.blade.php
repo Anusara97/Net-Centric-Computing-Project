@@ -123,10 +123,10 @@
     
     <!-- Button Section -->
     <div class="button-grid">
-        <a href="/function1" class="btn-custom-1">Registration Request Management</a>
-        <a href="/function2" class="btn-custom-1">User Management</a>
-        <a href="/function3" class="btn-custom-1">Past Paper Management</a>
-        <a href="/function4" class="btn-custom-1">Future Development</a>
+        <a href="/tempUserList" class="btn-custom-1">Registration Request Management</a>
+        <a href="/userList" class="btn-custom-1">User Management</a>
+        <a href="/add" class="btn-custom-1">Add Paper</a>
+        <a href="/papers" class="btn-custom-1">Past Papers</a>
     </div>
 </div>
 

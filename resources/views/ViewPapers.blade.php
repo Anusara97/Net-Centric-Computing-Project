@@ -1,6 +1,6 @@
 @include('cdn')
 
-<x-log-Reg_-Header/>
+<x-def-Header/>
 
 {{-- Scripts related to the deletion --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">

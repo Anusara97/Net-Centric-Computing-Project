@@ -97,7 +97,7 @@ class UserController extends Controller
                 return redirect('/login')->with('fail', 'Invalid role!');
             }
         } else {
-            return redirect('/login')->with('fail', 'Accessed Denied! You have to loggin first!');
+            return redirect('/login')->with('fail', 'Accessed Denied! You have to login first!');
         }
     }
 

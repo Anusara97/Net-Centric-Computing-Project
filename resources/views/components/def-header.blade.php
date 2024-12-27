@@ -3,6 +3,7 @@
         background-color: #87CEEB;
         color: #003366;
         padding: 10px 20px;
+        margin-right: 20%;
         font-weight: bold;
         text-align: center;
         border-radius: 5px;
@@ -26,8 +27,7 @@
         </a>
 
         <div class="d-flex align-items-center">
-            <a class="btn custom-btn" href="{{ url('/') }}">Home</a>
-            <a class="btn custom-btn" href="">Logout</a>
+            <a class="btn custom-btn" href="{{ url()->previous() }}">Back</a>
         </div>
     </div>    
 </nav>

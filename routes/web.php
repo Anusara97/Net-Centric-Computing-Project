@@ -33,19 +33,19 @@ Route::get('/logout',[UserController::class,'logout']); //operational link
 //Register operations
 Route::view("/register",'auth/register')->middleware('alreadyLoggedIn'); //visible to anyone
 Route::post("/register",[TempUserController::class, 'addTempUser']); //save detaila in a temp table
-Route::get('/tempUserList',[TempUserController::class, 'showTempUsers'])->middleware('adminOnly'); //view temp list. Should be related to admin
+Route::get('/tempUserList',[TempUserController::class, 'showTempUsers'])->middleware(['adminOnly','isLoggedIn']); //view temp list. Should be related to admin
 Route::get('approve/{id}',[TempUserController::class,'registerUser']); //operational link
 Route::get('remove/{id}',[TempUserController::class,'Remove']); //operational link
 
 //Paper Operations
-Route::view("/add",'AddPaper'); //should be visible to the admin and staff
+Route::view("/add",'AddPaper')->middleware(['staffOnly','isLoggedIn']); //should be visible to the admin and staff
 Route::post("/add", [PastPaperController::class, 'addPaper']); //operational link
-Route::get("/papers",[PastPaperController::class, 'viewPapers']); // visible to all users
+Route::get("/papers",[PastPaperController::class, 'viewPapers'])->middleware('isLoggedIn');
 Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper'); // visible to admin
 Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper'); // visible to all users
 
 //User Operations
-Route::get('/userList',[UserController::class, 'showUsers'])->middleware('adminOnly'); //visible to admin
+Route::get('/userList',[UserController::class, 'showUsers'])->middleware(['adminOnly','isLoggedIn']); //visible to admin
 Route::get('removeUser/{id}',[UserController::class,'Remove']); //visible to admin
 // editable purposes
 //Route::view('editUser','editUser'); //visible to admin
