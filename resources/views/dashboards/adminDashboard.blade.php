@@ -124,7 +124,7 @@
     <!-- Button Section -->
     <div class="button-grid">
         <a href="/tempUserList" class="btn-custom-1">Registration Request Management</a>
-        <a href="/userList" class="btn-custom-1">User Management</a>
+        <a href="/inner" class="btn-custom-1">User Management</a>
         <a href="/add" class="btn-custom-1">Add Paper</a>
         <a href="/papers" class="btn-custom-1">Past Papers</a>
     </div>

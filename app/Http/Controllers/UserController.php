@@ -57,6 +57,36 @@ class UserController extends Controller
         }
     }
 
+    //This function is used by admin to add user directly.
+    function addUser(Request $req) {
+        $req->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:temp_users',
+            'designation'=>'required',
+            'password'=>'required'
+        ]);
+
+        $User = new User;
+        
+        $User->name = $req->name;
+        $User->email = $req->email;
+        $User->designation = $req->designation;
+        $User->staffId = $req->staffId ?: null;
+        // Set department to null if the designation is Student, otherwise use the request input
+        $User->department = $req->designation === "Student" ? null : $req->department;
+        $User->studentId = $req->studentId ?: null;
+        $User->password = Hash::make($req->password);
+        // Set the role
+        $User->role = $req->designation === "Student" ? "Student" : "Staff";
+        $result = $User->save();
+
+        if($result) {
+            return back()->with('success', 'User Regitration Successfull!');
+        } else {
+            return back()->with('fail', 'Somthing worng!, Please check your inputs.');
+        }
+    }
+
     function loginUser(Request $req) {
         $req->validate([
             'username'=>'required',
@@ -76,7 +106,6 @@ class UserController extends Controller
             return back()->with('fail', 'Accessed Denied! Please, Register first!');
         }
     }
-
     
     function dashboards()
     {

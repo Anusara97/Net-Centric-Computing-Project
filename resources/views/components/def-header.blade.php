@@ -27,7 +27,7 @@
         </a>
 
         <div class="d-flex align-items-center">
-            <a class="btn custom-btn" href="{{ url()->previous() }}">Back</a>
+            <a class="btn custom-btn" href="/dashboard">Back</a>
         </div>
     </div>    
 </nav>

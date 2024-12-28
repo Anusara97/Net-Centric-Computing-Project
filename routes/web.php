@@ -27,6 +27,7 @@ Route::post("/loginUser",[UserController::class, 'loginUser']); //operational li
 
 //Access Dashboards
 Route::get('/dashboard',[UserController::class,'dashboards']); //by deafault can't access outside the system
+Route::view('/inner','dashboards/dashboardInnerAdmin')->middleware(['adminOnly','isLoggedIn']);
 //User logout
 Route::get('/logout',[UserController::class,'logout']); //operational link
 
@@ -36,6 +37,10 @@ Route::post("/register",[TempUserController::class, 'addTempUser']); //save deta
 Route::get('/tempUserList',[TempUserController::class, 'showTempUsers'])->middleware(['adminOnly','isLoggedIn']); //view temp list. Should be related to admin
 Route::get('approve/{id}',[TempUserController::class,'registerUser']); //operational link
 Route::get('remove/{id}',[TempUserController::class,'Remove']); //operational link
+//User registration by admin directly.
+Route::view("/addUser",'auth/addUser')->middleware(['adminOnly','isLoggedIn']);
+Route::post("/addUser",[UserController::class, 'addUser'])->middleware(['adminOnly','isLoggedIn']);
+
 
 //Paper Operations
 Route::view("/add",'AddPaper')->middleware(['staffOnly','isLoggedIn']); //should be visible to the admin and staff
