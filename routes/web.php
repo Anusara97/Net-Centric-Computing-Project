@@ -48,6 +48,8 @@ Route::post("/add", [PastPaperController::class, 'addPaper']); //operational lin
 Route::get("/papers",[PastPaperController::class, 'viewPapers'])->middleware('isLoggedIn');
 Route::get('removePaper/{id}', [PastPaperController::class, 'Remove'])->name('removePaper'); // visible to admin
 Route::get('/downloadPaper/{id}', [PastPaperController::class, 'downloadPaper'])->name('download.paper'); // visible to all users
+//This is visible only for students.
+Route::get('/innerPapers',[PastPaperController::class, 'viewInnerPapers'])->middleware('isLoggedIn');
 
 //User Operations
 Route::get('/userList',[UserController::class, 'showUsers'])->middleware(['adminOnly','isLoggedIn']); //visible to admin

@@ -78,5 +78,13 @@ class PastPaperController extends Controller
         // Return the file for download
         return Storage::download($filePath, $paper->paper);
     }
+
+    function viewInnerPapers() {
+        $papersI = PastPaper::where('level', 'Level 1 BSc. General Degree')->get();
+        $papersII = PastPaper::where('level', 'Level 2 BSc. General Degree')->get();
+        $papersIII = PastPaper::where('level', 'Level 3 BSc. General Degree')->get();
+    
+        return view('InnerPapers', compact('papersI', 'papersII', 'papersIII'));
+    }
     
 }
