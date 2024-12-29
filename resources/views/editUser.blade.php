@@ -1,6 +1,6 @@
 @include('cdn')
 
-<x-log-Reg_-Header/>
+<x-def-Header/>
 
 <style>
     .abc {
